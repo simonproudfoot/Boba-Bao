@@ -1,8 +1,10 @@
 <template>
-<main id="back" class="bg-brandPink min-h-screen relative">
-  <h1 id="soon" class="text-2xl md:text-5xl text-[#c1633a] top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 w-fit h-fit absolute uppercase" style="opacity: 0;">Coming soon</h1>
-    <div class="absolute h-[230px] w-[300px] top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2">
-
+<main id="back" class="bg-pink min-h-screen relative w-full overflow-hidden">
+    <h1 class="text-2xl md:text-5xl text-yellowDark top-1/2 flex  -translate-y-1/2 w-full h-fit absolute justify-center uppercase">
+        <span class="wordUpL px-1.5">Coming</span>
+        <span class="wordUpR px-1.5">soon</span>
+    </h1>
+    <div class="absolute logo" style="">
         <img class="logo1" src="/logo1.svg">
         <img class="logo2" src="/logo2.svg">
     </div>
@@ -25,12 +27,11 @@ export default {
             gsap.to('.logo1', { delay: 2, scale: 5, y: -400, autoAlpha: 0 })
             gsap.to('.logo2', { delay: 2, scale: 5, y: 400, autoAlpha: 0 })
             gsap.to('#back', { delay: 2, backgroundColor: '#fbd355' })
-            gsap.to('#soon', { delay: 2, opacity: 1 })
-            gsap.from('#soon', { delay: 2, y: 50 })
+
+            gsap.from('.wordUpL', { x: -300, opacity: 0, duration: 0.3, delay: 2 })
+            gsap.from('.wordUpR', { x: 300, opacity: 0, duration: 0.3, delay: 2 })
         }
     }
-
-    // logo 1 10 - 24
 }
 </script>
 
@@ -42,5 +43,14 @@ h4 {
     font-family: supersize-bk, sans-serif;
     font-style: normal;
     font-weight: 400;
+}
+.logo{
+    height: 230px;
+    width: 300px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 </style>

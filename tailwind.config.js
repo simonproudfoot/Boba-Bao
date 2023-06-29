@@ -1,32 +1,23 @@
-const colors = require('tailwindcss/colors')
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    mode: 'jit',
-    theme: {
-        screens: {
-            'sm': '640px',
-            'md': '768px',
-            'lg': '1024px',
-            'xl': '1280px',
-            '2xl': '1512px',
-        },
-        colors: {
-            gray: colors.gray,
-            black: colors.black,
-            'brandPink' : '#ec608d',
-            'red': '#890000',
-            'white': '#fff'
-        },
+  content: [
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
 
-        extend: {
-            fontSize: {
-                base: '20px',
-                'xxs': '0.7rem',
-            },
-            fontFamily: {
-                heading: ['supersize-bk'],
-                // body: ["dosisregular"],
-                // bold: ['dosisbold']
-            },
-        }
-    }
+    theme: {
+      colors: {
+        yellow: "#fbd355",
+        pink: "#ec608d",
+        yellowDark: "#c1633a"
+      
+
+    },
+    extend: {},
+  },
+  plugins: [],
 }
+

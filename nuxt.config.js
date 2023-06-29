@@ -1,4 +1,3 @@
-import path from 'path'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -23,10 +22,6 @@ export default {
     ]
   },
 
-  postcss: {
-    plugins: { tailwindcss: path.resolve(__dirname, './tailwind.config.js') }
-},
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -35,7 +30,6 @@ export default {
   plugins: [
     { src: '~/plugins/typekit.js', mode: 'client' }
   ],
-  purgeCSS: { mode: 'postcss' },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,5 +47,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      postcssOptions: {
+        plugins: {
+          tailwindcss: {},
+          autoprefixer: {},
+        },
+      },
+    },
   }
 }
